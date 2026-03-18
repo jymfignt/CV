@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio — Full-Stack Engineer</title>
+<title>Portfolio — Software Engineering Intern Candidate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -105,6 +105,10 @@ nav {
 .hero-desc { max-width:560px; font-size:1rem; color:var(--ink-2); font-weight:300; line-height:1.75; margin-bottom:36px; opacity:0; animation:fadeUp 0.7s var(--ease-out) 0.35s forwards; }
 .hero-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; opacity:0; animation:fadeUp 0.7s var(--ease-out) 0.5s forwards; }
 
+/* STATUS BADGE */
+.hero-status { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.06em; padding:6px 14px; border:1px solid rgba(58,122,58,0.35); border-radius:99px; color:#3A7A3A; background:#EAF3EA; margin-bottom:20px; opacity:0; animation:fadeUp 0.6s var(--ease-out) 0.05s forwards; }
+.hero-status .status-dot { width:6px; height:6px; border-radius:50%; background:#3A7A3A; animation:pulse 2s ease-in-out infinite; }
+
 /* BUTTONS */
 .btn-primary { display:inline-flex; align-items:center; gap:8px; padding:12px 24px; background:var(--ink); color:var(--white); border-radius:99px; font-size:0.82rem; letter-spacing:0.05em; overflow:hidden; position:relative; transition:transform 0.15s; }
 .btn-primary-label { position:relative; z-index:1; display:flex; align-items:center; gap:8px; }
@@ -135,7 +139,10 @@ nav {
 .project-link { display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; border:1px solid var(--border); color:var(--ink-3); transition:border-color 0.2s,color 0.2s; }
 .project-link:hover { border-color:var(--ink-2); color:var(--ink); }
 .project-card h3 { margin-bottom:10px; }
-.project-card .card-desc { font-size:0.88rem; line-height:1.7; margin-bottom:20px; }
+.project-card .card-desc { font-size:0.88rem; line-height:1.7; margin-bottom:16px; }
+.project-bullets { list-style:none; margin-bottom:20px; display:flex; flex-direction:column; gap:5px; }
+.project-bullets li { font-size:0.83rem; color:var(--ink-2); font-weight:300; display:flex; align-items:baseline; gap:8px; }
+.project-bullets li::before { content:'·'; color:var(--accent-warm); font-size:1.1em; flex-shrink:0; }
 .project-stack { display:flex; flex-wrap:wrap; gap:6px; }
 .stack-chip { font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.04em; padding:3px 10px; border-radius:var(--radius-sm); border:1px solid var(--border); color:var(--ink-2); }
 
@@ -199,6 +206,16 @@ nav {
 .activity-legend { display:flex; align-items:center; gap:6px; margin-top:8px; font-family:var(--font-mono); font-size:0.6rem; color:var(--ink-3); }
 .activity-legend-cells { display:flex; gap:3px; }
 
+/* EDUCATION */
+.edu-card { background:rgba(255,255,255,0.85); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 32px; display:flex; align-items:flex-start; gap:24px; }
+.edu-icon { flex-shrink:0; width:44px; height:44px; border-radius:var(--radius-md); background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--accent-warm); }
+.edu-body { flex:1; }
+.edu-degree { font-family:var(--font-display); font-size:1.1rem; margin-bottom:4px; color:var(--ink); }
+.edu-school { font-family:var(--font-mono); font-size:0.75rem; color:var(--ink-3); letter-spacing:0.04em; margin-bottom:12px; }
+.edu-details { display:flex; flex-wrap:wrap; gap:8px; }
+.edu-pill { font-family:var(--font-mono); font-size:0.68rem; padding:3px 10px; border-radius:99px; border:1px solid var(--border); color:var(--ink-2); }
+.edu-pill.highlight { background:rgba(196,168,130,0.12); border-color:rgba(196,168,130,0.4); color:var(--ink); }
+
 /* PHILOSOPHY */
 .phil-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
 .phil-card { background:rgba(255,255,255,0.85); border:1px solid var(--border); border-radius:var(--radius-md); padding:24px; transition:transform 0.2s,box-shadow 0.2s; }
@@ -215,6 +232,9 @@ nav {
 .exp-role { font-weight:500; font-size:0.95rem; margin-bottom:4px; }
 .exp-company { font-size:0.82rem; color:var(--ink-3); margin-bottom:10px; font-family:var(--font-mono); }
 .exp-desc { font-size:0.85rem; color:var(--ink-2); font-weight:300; line-height:1.7; }
+.exp-bullets { list-style:none; display:flex; flex-direction:column; gap:4px; margin-top:8px; }
+.exp-bullets li { font-size:0.83rem; color:var(--ink-2); font-weight:300; display:flex; align-items:baseline; gap:8px; }
+.exp-bullets li::before { content:'·'; color:var(--accent-warm); font-size:1.1em; flex-shrink:0; }
 
 /* SKILLS */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; }
@@ -237,6 +257,7 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
   .sidebar{display:none} footer{margin-left:0}
   .exp-item{grid-template-columns:1fr;gap:4px} .exp-period{padding-top:0;margin-bottom:6px}
   .supply-inspector.open{width:160px} .inspector-inner{width:160px;padding:16px}
+  .edu-card{flex-direction:column;gap:16px}
 }
 @media(max-width:640px){
   nav{padding:0 20px} .main{padding:40px 20px}
@@ -250,17 +271,21 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
 <body>
 
 <nav>
+  <!-- ✏️ TODO: Replace "YL" with your initials, and update all href links -->
   <div class="nav-logo"><span class="dot"></span>YL.DEV</div>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <!-- ✏️ TODO: Replace with your actual email -->
     <li><a href="mailto:hello@yourdomain.com" class="nav-cta">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#education" onclick="closeMobile()">Education</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
   <a href="#skills" onclick="closeMobile()">Skills</a>
   <a href="mailto:hello@yourdomain.com" onclick="closeMobile()">Contact</a>
@@ -277,11 +302,11 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
         </a></li>
         <li><a href="#project-supply" onclick="setActive(this)">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v4"/><path d="m8.25 16.5-3.5-4"/><path d="m15.75 16.5 3.5-4"/></svg>
-          Starbucks Supply Chain
+          Supply Chain Viz
         </a></li>
         <li><a href="#project-wasm" onclick="setActive(this)">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          C++ Snake via Wasm
+          C++ Snake / Wasm
         </a></li>
       </ul>
     </div>
@@ -292,15 +317,16 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
     <div>
       <p class="sidebar-section-label">Stack</p>
       <div class="sidebar-tag-row">
-        <span class="tag">Next.js</span><span class="tag">MDX</span>
-        <span class="tag">Python</span><span class="tag">D3.js</span>
-        <span class="tag">Tailwind</span><span class="tag">TypeScript</span>
-        <span class="tag">Wasm</span><span class="tag">C++</span>
+        <span class="tag">C++</span><span class="tag">Python</span>
+        <span class="tag">React</span><span class="tag">D3.js</span>
+        <span class="tag">TypeScript</span><span class="tag">Node.js</span>
+        <span class="tag">Wasm</span><span class="tag">SQL</span>
       </div>
     </div>
     <div>
       <p class="sidebar-section-label">Links</p>
       <ul class="sidebar-nav">
+        <!-- ✏️ TODO: Replace href with your actual GitHub/LinkedIn/email -->
         <li><a href="https://github.com" target="_blank">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
           GitHub
@@ -318,11 +344,23 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
   </aside>
 
   <main class="main">
-    <!-- HERO -->
+
+    <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
     <section class="hero">
-      <p class="hero-eyebrow">Full-Stack Engineer · Data Visualization</p>
-      <h1>Building systems<br/><em><span id="typewriter"></span><span id="typewriter-cursor"></span></em></h1>
-      <p class="hero-desc">I design and engineer data-driven products with precision — from Python data pipelines to interactive MDX documentation with live Wasm components. Every piece of this portfolio is a functioning system, not a mockup.</p>
+      <!-- ✏️ TODO: Change university name, year, and target role to match your profile -->
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        Open to Internship · Summer / Fall 2025
+      </div>
+      <p class="hero-eyebrow">Computer Science Student · Full-Stack &amp; Systems</p>
+      <h1>Code that<br/><em><span id="typewriter"></span><span id="typewriter-cursor"></span></em></h1>
+      <p class="hero-desc">
+        <!-- ✏️ TODO: Fill in your university name and graduation year -->
+        I'm a Computer Science undergraduate at <strong style="color:var(--ink);font-weight:500">[Your University]</strong>, graduating [Year].
+        I build full-stack web applications, data visualization systems, and low-level C++ programs
+        compiled to WebAssembly — and I'm actively seeking a <strong style="color:var(--ink);font-weight:500">Software Engineering Internship</strong>
+        in backend, full-stack, or systems development.
+      </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">
           <span class="btn-primary-label">
@@ -330,6 +368,7 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
             View Projects
           </span>
         </a>
+        <!-- ✏️ TODO: Replace /resume.pdf with your actual resume link -->
         <a href="/resume.pdf" class="btn-secondary">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
           Download CV
@@ -337,45 +376,56 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ═══════════════════════════════════════ PROJECTS ═══════════════════════════════════════ -->
     <section class="section" id="projects">
       <div class="section-header"><h2>Projects</h2></div>
       <div class="project-grid">
 
-        <!-- Travel Map -->
+        <!-- ── Travel Map ── -->
         <div class="project-card" id="project-travel">
           <div class="project-card-inner">
             <div class="project-meta">
               <span class="project-badge active">Live</span>
               <div class="project-links">
-                <a href="#" class="project-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
-                <a href="#" class="project-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                <a href="#" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+                <a href="#" class="project-link" title="Live Demo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               </div>
             </div>
-            <h3>Travel Map — Interactive Route Visualization</h3>
-            <p class="card-desc">An MDX-powered travel journal where prose and geography coexist. Python processes raw GPS traces into GeoJSON; a React <code>MapComponent</code> renders them inline mid-article.</p>
+            <h3>Geographic Route Visualizer — Python + Canvas</h3>
+            <p class="card-desc">Built an interactive route visualization system that processes raw location data into animated geographic paths rendered on HTML5 Canvas.</p>
+            <ul class="project-bullets">
+              <li>Processed GPS coordinate data into structured GeoJSON format using Python</li>
+              <li>Implemented animated path rendering with smooth interpolation using Canvas API</li>
+              <li>Designed a responsive layout that adapts map display to any screen size</li>
+              <!-- ✏️ TODO: Add 1–2 more bullets specific to what you actually built -->
+            </ul>
             <div class="map-demo">
               <canvas id="mapCanvas"></canvas>
               <div class="map-overlay"><div style="font-weight:500;color:var(--ink);margin-bottom:4px;">Route · Southeast Asia</div><div>12 cities · 4,200 km</div></div>
             </div>
             <div style="margin-top:16px" class="project-stack">
-              <span class="stack-chip">Next.js</span><span class="stack-chip">MDX</span><span class="stack-chip">Contentlayer</span><span class="stack-chip">Python</span><span class="stack-chip">MapLibre GL</span><span class="stack-chip">GeoJSON</span>
+              <span class="stack-chip">Python</span><span class="stack-chip">GeoJSON</span><span class="stack-chip">Canvas API</span><span class="stack-chip">JavaScript</span><span class="stack-chip">HTML/CSS</span>
             </div>
           </div>
         </div>
 
-        <!-- Supply Chain -->
+        <!-- ── Supply Chain ── -->
         <div class="project-card" id="project-supply">
           <div class="project-card-inner">
             <div class="project-meta">
-              <span class="project-badge">Case Study</span>
+              <span class="project-badge">Data Visualization</span>
               <div class="project-links">
-                <a href="#" class="project-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
-                <a href="#" class="project-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                <a href="#" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+                <a href="#" class="project-link" title="Live Demo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               </div>
             </div>
-            <h3>Starbucks Supply Chain — D3 Force-directed Topology</h3>
-            <p class="card-desc">D3.js force-directed graph embedded in an MDX case study. Drag nodes to explore the topology. Click any node to open the live data inspector panel.</p>
+            <h3>Supply Chain Network — Interactive D3.js Graph</h3>
+            <p class="card-desc">Modeled a real-world supply chain topology as an interactive force-directed graph. Drag nodes to explore relationships; click any node to open the live data inspector.</p>
+            <ul class="project-bullets">
+              <li>Modeled supply chain nodes and weighted relationships using D3.js force simulation</li>
+              <li>Built a dynamic inspector panel that renders node metrics on click without page reload</li>
+              <li>Implemented drag-and-drop interaction with physics constraints for natural repositioning</li>
+            </ul>
             <div class="supply-wrap">
               <div class="supply-graph">
                 <svg id="supplySvg"></svg>
@@ -393,22 +443,28 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
               </div>
             </div>
             <div style="margin-top:16px" class="project-stack">
-              <span class="stack-chip">Next.js</span><span class="stack-chip">MDX</span><span class="stack-chip">D3.js v7</span><span class="stack-chip">Contentlayer</span><span class="stack-chip">TypeScript</span>
+              <span class="stack-chip">D3.js v7</span><span class="stack-chip">JavaScript</span><span class="stack-chip">SVG</span><span class="stack-chip">HTML/CSS</span>
             </div>
           </div>
         </div>
 
-        <!-- Wasm Snake -->
+        <!-- ── Wasm Snake ── -->
         <div class="project-card" id="project-wasm">
           <div class="project-card-inner">
             <div class="project-meta">
               <span class="project-badge active">Interactive</span>
               <div class="project-links">
-                <a href="#" class="project-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+                <a href="#" class="project-link" title="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
               </div>
             </div>
-            <h3>C++ Snake Game — Compiled to WebAssembly</h3>
-            <p class="card-desc">A Snake game written in C++17, compiled to Wasm via Emscripten, and embedded in an MDX article. Press Run to boot the Wasm module — the console reflects the live runtime log. Use arrow keys to play.</p>
+            <h3>Snake Game — C++17 Compiled to WebAssembly</h3>
+            <p class="card-desc">Wrote a complete Snake game engine in C++17 and compiled it to WebAssembly via Emscripten, running natively in the browser at 60fps. Press Run to boot the module — the console shows the live runtime log.</p>
+            <ul class="project-bullets">
+              <li>Implemented full game logic (collision detection, state machine, scoring) in C++17</li>
+              <li>Compiled C++ to <code>.wasm</code> binary using Emscripten; binary size: 48 KB</li>
+              <li>Integrated Wasm module with JavaScript Canvas API for real-time rendering</li>
+              <li>Bridged C++ runtime events to browser console log via JS interop bindings</li>
+            </ul>
             <div class="wasm-demo">
               <div class="wasm-header">
                 <div class="wasm-dots"><span></span><span></span><span></span></div>
@@ -425,7 +481,7 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
               </div>
             </div>
             <div style="margin-top:16px" class="project-stack">
-              <span class="stack-chip">C++17</span><span class="stack-chip">Emscripten</span><span class="stack-chip">WebAssembly</span><span class="stack-chip">Canvas API</span><span class="stack-chip">MDX</span>
+              <span class="stack-chip">C++17</span><span class="stack-chip">WebAssembly</span><span class="stack-chip">Emscripten</span><span class="stack-chip">Canvas API</span><span class="stack-chip">JavaScript</span>
             </div>
           </div>
         </div>
@@ -433,42 +489,157 @@ footer { border-top:1px solid var(--border); padding:36px clamp(24px,5vw,72px); 
       </div>
     </section>
 
-    <!-- PHILOSOPHY -->
-    <section class="section">
-      <div class="section-header"><h2>Philosophy</h2></div>
-      <div class="phil-grid">
-        <div class="phil-card"><div class="phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Component-first</h3><p style="font-size:0.82rem">Pages assembled from composable units — never hard-coded, always reusable.</p></div>
-        <div class="phil-card"><div class="phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div><h3>Content as Data</h3><p style="font-size:0.82rem">MDX + Contentlayer transforms prose into typed, queryable data structures.</p></div>
-        <div class="phil-card"><div class="phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Zero-friction Updates</h3><p style="font-size:0.82rem">Adding a project means writing one MDX file. The system handles the rest.</p></div>
-        <div class="phil-card"><div class="phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Data Meets Design</h3><p style="font-size:0.82rem">Visualizations are the primary interface for complex datasets, not decorations.</p></div>
+    <!-- ═══════════════════════════════════════ EDUCATION ═══════════════════════════════════════ -->
+    <section class="section" id="education">
+      <div class="section-header"><h2>Education</h2></div>
+      <!-- ✏️ TODO: Fill in your real university, degree, graduation year, GPA (if strong), and relevant coursework -->
+      <div class="edu-card">
+        <div class="edu-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">B.Sc. Computer Science</div>
+          <!-- ✏️ TODO: Replace university name and expected graduation -->
+          <div class="edu-school">[Your University] · Expected [Month Year]</div>
+          <div class="edu-details">
+            <!-- ✏️ TODO: Add/remove coursework pills that match your actual courses -->
+            <span class="edu-pill highlight">Data Structures &amp; Algorithms</span>
+            <span class="edu-pill highlight">Operating Systems</span>
+            <span class="edu-pill highlight">Computer Networks</span>
+            <span class="edu-pill">Database Systems</span>
+            <span class="edu-pill">Software Engineering</span>
+            <span class="edu-pill">Object-Oriented Programming</span>
+            <!-- ✏️ TODO: Uncomment and update if GPA is 3.5+ worth mentioning -->
+            <!-- <span class="edu-pill highlight">GPA: 3.8 / 4.0</span> -->
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- ═══════════════════════════════════════ EXPERIENCE ═══════════════════════════════════════ -->
     <section class="section" id="experience">
       <div class="section-header"><h2>Experience</h2></div>
       <div class="exp-list">
-        <div class="exp-item"><div class="exp-period">2023 — Present</div><div><div class="exp-role">Senior Full-Stack Engineer</div><div class="exp-company">Acme Corp · Remote</div><div class="exp-desc">Led migration to Next.js App Router, reducing TTFB by 60%. Built an MDX-based internal documentation system consumed by 200+ engineers.</div></div></div>
-        <div class="exp-item"><div class="exp-period">2021 — 2023</div><div><div class="exp-role">Data Engineer</div><div class="exp-company">Analytics Studio · San Francisco</div><div class="exp-desc">Designed Python ETL pipelines processing 50M+ events/day. Built D3.js dashboards that replaced legacy Tableau, cutting BI costs by 40%.</div></div></div>
-        <div class="exp-item"><div class="exp-period">2019 — 2021</div><div><div class="exp-role">Frontend Engineer</div><div class="exp-company">Startup XYZ · New York</div><div class="exp-desc">Built the company's React component library. Implemented design system tokens unifying visual language across 3 products.</div></div></div>
+
+        <!-- ✏️ TODO: Replace ALL items below with your real project/experience titles.
+             Use course projects, personal projects, club/team roles, or part-time work.
+             If you only have projects, label them "Course Project" or "Personal Project".
+             NEVER list fake company roles — interviewers WILL ask for details. -->
+
+        <div class="exp-item">
+          <!-- ✏️ TODO: Replace with actual semester/date range -->
+          <div class="exp-period">Jan 2025 — Present</div>
+          <div>
+            <div class="exp-role">Project Lead — [Your Course/Capstone Project Name]</div>
+            <!-- ✏️ TODO: Replace with your actual course or team name -->
+            <div class="exp-company">Course Project · [University Name]</div>
+            <ul class="exp-bullets">
+              <!-- ✏️ TODO: Describe what you built and your specific contributions -->
+              <li>Led a team of [N] to design and implement [brief description of system]</li>
+              <li>Built [specific component] using [language/framework], handling [what it does]</li>
+              <li>Achieved [outcome — e.g., "reduced runtime by 30%", "processed 10k records"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <!-- ✏️ TODO: Replace with actual date range -->
+          <div class="exp-period">Sep 2024 — Dec 2024</div>
+          <div>
+            <div class="exp-role">[Your Second Project / Role Title]</div>
+            <!-- ✏️ TODO: e.g., "Course Project · Data Structures" or "Personal Project" -->
+            <div class="exp-company">[Context / Course / Club]</div>
+            <ul class="exp-bullets">
+              <li>Implemented [feature/module] in [language] as part of [course/team]</li>
+              <li>Applied [concept — e.g., graph algorithms, REST APIs] to solve [problem]</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-period">2024</div>
+          <div>
+            <div class="exp-role">[Third Experience — Club, Volunteer, or Another Project]</div>
+            <div class="exp-company">[Organization / Course]</div>
+            <ul class="exp-bullets">
+              <li>Contributed to [what] by [how], resulting in [outcome]</li>
+              <li>Collaborated with [team/partner] to [task/deliverable]</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- ═══════════════════════════════════════ SKILLS ═══════════════════════════════════════ -->
     <section class="section" id="skills">
       <div class="section-header"><h2>Skills</h2></div>
+      <!-- ✏️ TODO: Only list skills you can actually talk about in an interview -->
       <div class="skills-grid">
-        <div class="skill-group"><div class="skill-group-label">Frontend</div><div class="skill-items"><span class="skill-pill">React</span><span class="skill-pill">Next.js</span><span class="skill-pill">TypeScript</span><span class="skill-pill">Tailwind</span><span class="skill-pill">MDX</span></div></div>
-        <div class="skill-group"><div class="skill-group-label">Data & Viz</div><div class="skill-items"><span class="skill-pill">D3.js</span><span class="skill-pill">Recharts</span><span class="skill-pill">Python</span><span class="skill-pill">Pandas</span><span class="skill-pill">GeoJSON</span></div></div>
-        <div class="skill-group"><div class="skill-group-label">Systems</div><div class="skill-items"><span class="skill-pill">C++</span><span class="skill-pill">WebAssembly</span><span class="skill-pill">Emscripten</span><span class="skill-pill">Rust</span></div></div>
-        <div class="skill-group"><div class="skill-group-label">Infra</div><div class="skill-items"><span class="skill-pill">Vercel</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Docker</span><span class="skill-pill">AWS</span></div></div>
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-items">
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Frontend</div>
+          <div class="skill-items">
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">HTML/CSS</span>
+            <span class="skill-pill">D3.js</span>
+            <span class="skill-pill">Canvas API</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Backend / Systems</div>
+          <div class="skill-items">
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">WebAssembly</span>
+            <span class="skill-pill">Emscripten</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">CS Fundamentals</div>
+          <div class="skill-items">
+            <span class="skill-pill">Data Structures</span>
+            <span class="skill-pill">Algorithms</span>
+            <span class="skill-pill">OOP</span>
+            <span class="skill-pill">Linux / Shell</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Tools</div>
+          <div class="skill-items">
+            <span class="skill-pill">Git / GitHub</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">VS Code</span>
+            <!-- ✏️ TODO: Add any other tools you actually use -->
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Data</div>
+          <div class="skill-items">
+            <span class="skill-pill">Python (Pandas)</span>
+            <span class="skill-pill">GeoJSON</span>
+            <span class="skill-pill">MySQL</span>
+            <!-- ✏️ TODO: Add PostgreSQL, MongoDB, etc. if relevant -->
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 </div>
 
 <footer>
-  <span class="footer-copy">© 2026 · Built with Next.js + MDX + WebAssembly · Deployed on GitHub Pages</span>
+  <!-- ✏️ TODO: Replace with your name/year and correct links -->
+  <span class="footer-copy">© 2025 · [Your Name] · Open to Software Engineering Internships</span>
   <div class="footer-links">
     <a href="https://github.com" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
     <a href="https://linkedin.com" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -485,7 +656,7 @@ function setActive(el){document.querySelectorAll('.sidebar-nav a').forEach(a=>a.
 
 /* TYPEWRITER */
 (function(){
-  const phrases=['speak for themselves.','tell the whole story.','scale without effort.','ship themselves.'];
+  const phrases=['solve real problems.','run close to the metal.','ship on time.','stand on their own.'];
   const el=document.getElementById('typewriter');
   let pi=0,ci=0,deleting=false,delay=0;
   function tick(){
